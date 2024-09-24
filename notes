@@ -1,0 +1,452 @@
+nav {
+  position: fixed; /* Make the navbar fixed */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Stretch to the right */
+  background-color: white; /* Ensure visibility against background */
+  z-index: 10; /* Keep it above other content */
+  padding: 10px 100px; /* Adjust padding for spacing */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space out the logo and nav items */
+}
+
+.logo {
+  width: 45%; /* Adjust as needed */
+  margin: 0; /* Remove margin for better alignment */    
+}
+
+nav ul {
+  display: flex; /* Ensure the list items are in a row */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 20px; /* Adjust spacing between items */
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #bbcf9b;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu {
+  display: flex; /* Display items in a row */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.nav-links li {
+  position: relative; /* Required for positioning the dropdown */
+}
+
+.dropdown-toggle {
+  cursor: pointer; /* Change cursor to pointer for dropdown toggle */
+}
+
+/* Dropdown styles */
+.dropdown {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100%; /* Position below the parent li */
+  left: 0; /* Align to the left */
+  background: white; /* Background color */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Rounded corners */
+  z-index: 10; /* Ensure it appears above other content */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+/* Show dropdown on toggle */
+.dropdown-toggle.active + .dropdown {
+  display: block; /* Show dropdown when active */
+}
+
+.dropdown-menu {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.dropdown-menu li {
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.dropdown-menu li:last-child {
+  padding-bottom: 0; /* Ensure no extra padding at the bottom */
+}
+
+/* Make sure dropdown items have no additional spacing */
+.dropdown li {
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Link styles in dropdown */
+.dropdown li a {
+  display: block; /* Make links full width */
+  padding: 5px 10px; /* Adjust padding for links to minimize gap */
+  color: black; /* Text color */
+  text-decoration: none; /* Remove underline */
+  margin: 0; /* Remove margin */
+}
+
+.dropdown li a:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+}
+
+/* Show dropdown on hover */
+.nav-links li:hover .dropdown {
+  display: block; /* Show dropdown */
+}
+
+.menu-toggle {
+  display: none; /* Show toggle on small screens */
+  cursor: pointer; /* Ensure cursor changes to pointer */
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px); /* Adjust the first bar */
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0; /* Hide the middle bar */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px); /* Adjust the third bar */
+}
+
+/* Ensuring the transform origins are centered */
+.bar:nth-child(1), .bar:nth-child(3) {
+  transform-origin: center; /* Ensures rotation happens from the center */
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto; /* Space between bars */
+  background-color: black; /* Color of the bars */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+@media (max-width: 600px) { 
+  body {
+      overflow-x: hidden; /* Hide horizontal overflow */
+      margin: 0; /* Remove default margin */
+  }
+  
+  #header {
+      width: 100%;
+      height: 100vh;
+      background-image: url(../../Resume/website-photo-background-removed.png);
+      background-size: 175px 201px; /* Adjust the size as needed */
+      background-position: 51% 100%; /* Position the image */
+      background-attachment: fixed; /* Fixed background */
+      background-repeat: no-repeat; /* Prevent repeating */
+      display: flex; /* Use flexbox */
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      padding: 0;
+  }
+  
+  #headertextimage {
+      width: 100%;
+      background-color: transparent;
+      display: flex; /* Use flexbox */
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      justify-content: center; /* Center items vertically */
+      margin-top: 0; /* Reduced top margin */
+      padding: 0;
+  }
+  
+  #headertextimage p,
+  #headertextimage h1 {
+      text-align: center; /* Center text */
+      margin: 0; /* Remove margin */
+      padding: 0;
+  }
+  
+  .container {
+          padding: 20px 30px; /* Adjust padding for mobile */
+          box-sizing: border-box; /* Ensure padding is included in the width */
+          max-width: 100vw; /* Prevent overflow */
+      }
+  
+  .social-icons {
+      display: flex;
+      gap: 10px; /* Space between icons */
+      justify-content: center; /* Center the icons */
+      margin: -4px 0; /* Space around the icons */
+      padding: 0; /* Remove extra padding */
+  }
+  
+  .social-icons a {
+      text-decoration: none;
+      font-size: 35px;
+      color: #ababab;
+      display: inline-block;
+      transition: transform 0.5s;
+  }
+  
+  .social-icons a:hover {
+      color: #bbcf9b;
+      transform: translateY(-5px);
+  }
+  
+  .btn-download {
+      display: inline-block; /* Make it an inline-block element */
+      margin: 5px 0 5px -15px;
+      background-color: #bbcf9b; /* Background color */
+      color: black; /* Text color */
+      text-decoration: none; /* Remove underline */
+      border-radius: 5px; /* Rounded corners */
+      padding: 10px 20px; /* Button padding */
+  }
+  
+  
+  nav {
+      padding: 20px 20px; /* Increased padding */
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items */
+      justify-content: center; /* Center items */
+      width: 100%; /* Full width */
+  }
+  
+  .nav-menu {
+      padding: 0; /* Remove padding */
+      margin: 0; /* Remove margin */
+  }
+  
+  .nav-menu.active {
+      display: flex; /* Show menu when active */
+  }
+  
+  .nav-menu li:hover .dropdown {
+      display: block; /* Show dropdown on hover for small screens */
+  }
+  
+  
+  
+  
+  /* Dropdown styles */
+  .dropdown {
+      display: none; /* Hide by default */
+      position: absolute;
+      top: 100%; /* Position below the parent li */
+      left: 0; /* Align to the left */
+      background: white; /* Background color */
+      border: 1px solid #ccc; /* Add a border */
+      border-radius: 4px; /* Rounded corners */
+      z-index: 10; /* Ensure it appears above other content */
+      padding: 0; /* Remove padding */
+      margin-top: -5px; /* Pull it up slightly */
+  }
+      
+      .dropdown-toggle.active + .dropdown {
+      display: block; /* Show dropdown when active */
+      }
+  
+      .dropdown-menu {
+          margin: 0; /* Remove margin */
+          padding: 0; /* Remove padding */
+      }
+  
+    /* Reduce padding for dropdown items to minimize gap */
+    .dropdown-menu li {
+      padding: 5px 10px; /* Adjust padding for items */
+      margin: 0; /* Remove margin to minimize gap */
+      border-bottom: 1px solid #ccc; /* Optional: add a border */
+  }
+  
+  .dropdown-menu li:last-child {
+      border-bottom: none; /* Remove the bottom border on the last item */
+  }
+  
+  
+  .dropdown.active .dropdown-menu {
+      display: block; /* Show dropdown when parent is active */
+  }
+  
+  .logo-link {
+      flex-grow: 1; /* Allow link to grow and take up space */
+      display: flex; /* Use flexbox for alignment */
+      justify-content: center; /* Center the logo */
+      text-decoration: none; /* Remove underline */
+  }
+  
+  .logo-wrapper {
+      display: flex; /* Use flexbox for alignment */
+      justify-content: center; /* Center the logo within the wrapper */
+  }
+  
+  .logo {
+      width: auto; /* Allow logo to maintain its width */
+      max-width: 300px; /* Max width */
+      height: auto; /* Maintain aspect ratio */
+      margin: 0; /* No margin */
+  }
+  
+  
+  nav ul {
+      flex-direction: column; /* Stack nav items */
+      align-items: center; /* Center align items */
+      margin-top: 10px; /* Add some space above */
+  }
+  
+  nav ul li {
+      margin: 8px 0; /* Adjust spacing between items */
+  }
+  
+  .menu-toggle {
+      display: block; /* Show toggle on small screens */
+      margin-left: auto; /* Push the hamburger icon to the right */
+      cursor: pointer; /* Ensure cursor changes to pointer */
+      margin-top: -36px;
+  }
+  
+  .nav-links {
+      display: none; /* Hide links by default on mobile */
+      margin: 10px;
+  }
+  
+  .nav-links.active {
+      display: flex; /* Show links when active */
+      flex-direction: column; /* Stack them vertically */
+  }
+  
+  }
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style-proper.css">
+  <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+
+<div id="header">
+  <div class="container">
+    <nav>
+      <a href="#top" class="logo-link">
+        <div class="logo-wrapper">
+          <img src="d:\Website\JACK GREENBERG.png" class="logo" alt="Logo">
+        </div>
+      </a>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#movies">Movies</a></li>
+        <li><a href="#digital">Digital</a></li>
+      </ul>
+      <div class="dropdown">
+        <button class="dropbtn" id="dropdown-button">Menu</button>
+        <ul class="dropdown-content">
+          <li><a href="#about">About</a></li>
+          <li><a href="#movies">Movies</a></li>
+          <li><a href="#digital">Digital</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="headertextimage">    
+      <div class="header-text">
+        <p>Screenwriter</p>
+        <h1>Hi, I'm <span>Jack</span><br>Welcome to My Portfolio</h1>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@JackandKaliyahProductions" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/studiogreenberg/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jackmgreenberg/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <a href="d:\Resume\Resume - Jack Greenberg.pdf" target="_blank" class="btn-download" download>Download CV</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const mobileMenuButton = document.getElementById("mobile-menu");
+  const navLinks = document.querySelector(".nav-links");
+  const dropdownButton = document.getElementById("dropdown-button");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  // Toggle nav links on mobile menu button click
+  mobileMenuButton.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+    mobileMenuButton.classList.toggle("active");
+  });
+
+  // Toggle dropdown on button click
+  dropdownButton.addEventListener("click", function(event) {
+    dropdownContent.classList.toggle("show");
+    event.stopPropagation(); // Prevent the click from reaching the window
+  });
+
+  // Hide dropdown when a link is clicked
+  dropdownContent.addEventListener("click", function(e) {
+    if (e.target.tagName === 'A') {
+      dropdownContent.classList.remove("show");
+      navLinks.classList.remove("active");
+      mobileMenuButton.classList.remove("active");
+    }
+  });
+
+  // Close dropdown if clicked outside
+  window.addEventListener("click", function(event) {
+    const isSmallScreen = window.matchMedia("(max-width: 768px)").matches; // Adjust max-width as needed
+    if (isSmallScreen && dropdownContent.classList.contains("show") &&
+        !dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+      dropdownContent.classList.remove("show");
+    }
+  });
+});
+</script>
+  
+
+

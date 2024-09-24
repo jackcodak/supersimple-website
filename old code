@@ -1,0 +1,427 @@
+html:
+<!-- ----------About------------ -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="d:\Audacity\Untitled_design__3_-removebg-preview.png" alt="About Me">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum amet, deserunt excepturi architecto repudiandae repellat.
+          </p>
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>        
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li>
+                ::marker
+                <span>UI/UX</span>
+                <br>
+                "Designing Web/App interfaces"
+              </li>
+              <li>
+                ::marker
+                <span>Web Development</span>
+                <br>
+                "Web app Development"
+              </li>
+              <li>
+                ::marker
+                <span>App Development</span>
+                <br>
+                "Building Android/iOS apps"
+              </li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li>
+                ::marker
+                <span>2021 - Current</span>
+                <br>
+                "UI/UX Design Training at ET Institute"
+              </li>
+              <li>
+                ::marker
+                <span>2019 - 2021</span>
+                <br> "Team lead at StarApp LLC."
+              </li>
+              <li>
+                ::marker
+                <span>2017 - 2019</span>
+                <br> "UI/UX Design Executive at Coin Digital Ltd."
+              </li>
+              <li>
+                ::marker
+                <span>2016 - 2017</span>
+                <br> "Internship at ekart eCommerce."
+              </li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li>
+                ::marker
+                <span>2016</span>
+                <br> 
+                "UI/UX Design Training at ET Institute"
+              </li>
+              <li>
+                ::marker
+                <span>2016</span>
+                <br> 
+                "MBA from MIT Bangalore."
+              </li>
+              <li>
+                ::marker
+                <span>2014</span>
+                <br>
+                "BBA from ISM Bangalore."
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ----------Contact------------ -->
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p>
+            <i class="fas fa-paper-plane"></i>
+            " 0123456789"
+          </p>
+          <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+        </div>
+        <div class="contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>
+        Copyright @ Kevin. Made with
+        <i class="fas fa-heart"></i>
+        by
+        <a href="https://www.youtube.com/channel/UCkjoHfkLEy7ZT4bA2myJ8xA?sub_confirmation=1">Easy Tutorials</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+      for(tablink of tablinks){
+          tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents){
+          tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+  <script>
+    const scriptURL = '< add your own link here >'; // add your own app script link here
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg");
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          msg.innerHTML = "Message sent successfully";
+          setTimeout(function(){
+            msg.innerHTML = "";
+          },5000);
+          form.reset();
+        })
+        .catch(error => console.error('Error!', error.message));
+    });
+  </script>
+</body>
+</html>
+
+
+css:
+  {
+      padding: 80px 0;
+      color: #ababab;
+      }
+      .row{
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+      }
+      
+      .about-col-1{
+          flex-basis: 35%;
+      }
+      .about-col-1 img{
+          width: 100%;
+          border-radius: 15px;
+      }
+      .about-col-2{
+          flex-basis: 60%;
+      }
+      
+      .sub-title{
+          font-size: 60px;
+          font-weight: 600;
+          color: black;
+      }
+      
+      .tab-titles{
+          display: flex;
+          margin: 20px 0 40px;
+      }
+      .tab-links{
+          margin-right: 50px;
+          font-size: 18px;
+          font-weight: 500;
+          cursor: pointer;
+          position: relative;
+      }
+      .tab-links::after{
+          content: '';
+          width: 0;
+          height: 3px;
+          background: #bbcf9b;
+          position: absolute;
+          left: 0;
+          bottom: -8px;
+          transition: 0.5s;
+      }
+      
+      .tab-links.active-link::after{
+          width: 50%;
+      }
+      
+      .tab-contents ul li{
+          list-style: none;
+          margin: 10px 0;
+      }
+      .tab-contents ul li span{
+          color: #bbcf9b;
+          font-size: 14px;
+      }
+      .tab-contents{
+          display: none;
+      }
+      .tab-contents.active-tab{
+          display: block;
+      }
+      
+      
+      /* ---------contact-------- */
+      .contact-left{
+          flex-basis: 35%;
+      }
+      .contact-right{
+          flex-basis: 60%;
+      }
+      .contact-left p{
+          margin-top: 30px;
+      }
+      .contact-left p i{
+          color: #bbcf9b;
+          margin-right: 15px;
+          font-size: 25px;
+      }
+      .social-icons{
+          margin-top: 30px;
+      }
+      .social-icons a{
+          text-decoration: none;
+          font-size: 30px;
+          margin-right: 15px;
+          color: #ababab;
+          display: inline-block;
+          transition: transform 0.5s;
+      }
+      .social-icons a:hover{
+          color: #bbcf9b;
+          transform: translateY(-5px);
+      }
+      .btn.btn2{
+          display: inline-block;
+          background: #bbcf9b;
+      }
+      .contact-right form{
+          width: 100%;
+      }
+      form input, form textarea{
+          width: 100%;
+          border: 0;
+          outline: none;
+          background: #d4d3d1;
+          padding: 15px;
+          margin: 15px 0;
+          color: black;
+          font-size: 18px;
+          border-radius: 6px;
+      }
+      form .btn2{
+          padding: 14px 60px;
+          font-size: 18px;
+          margin-top: 20px;
+          cursor: pointer;
+      }
+      .copyright{
+          width: 100%;
+          text-align: center;
+          padding: 25px 0;
+          background: #d4d3d1;
+          font-weight: 300;
+          margin-top: 20px;
+      }
+      .copyright i{
+          color: #bbcf9b;
+      }
+      .copyright a{
+          color: #bbcf9b;
+          text-decoration: none;
+      }
+      
+      
+      
+      #services{
+          padding: 30px 0;
+      }
+      .services-list{
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          grid-gap: 40px;
+          margin-top: 50px;
+      }
+      .services-list div{
+          background: #d4d3d1;
+          padding: 40px;
+          font-size: 13px;
+          font-weight: 300;
+          border-radius: 10px;
+          transition: background 0.5s, transform 0.5s;
+      }
+      .services-list div i{
+          font-size: 50px;
+          margin-bottom: 30px;
+      }
+      .services-list div h2{
+          font-size: 30px;
+          font-weight: 500;
+          margin-bottom: 15px;
+      }
+      .services-list div a{
+          text-decoration: none;
+          color: black;
+          font-size: 12px;
+          margin-top: 20px;
+          display: inline-block;
+      }
+      .services-list div:hover{
+          background: #bbcf9b;
+          transform: translateY(-10px);
+      }
+      
+      
+      @media only screen and (max-width: 600px) {
+        /* Container adjustments */
+        .container {
+            padding: 10px; /* Reduce padding */
+        }
+    
+        /* Header */
+        #header {
+            height: auto; /* Allow height to adjust */
+            background-size: cover; /* Cover the entire area */
+            background-attachment: scroll; /* Allow scrolling */
+        }
+    
+        #headertextimage {
+            padding: 20px; /* Reduce padding */
+            margin-bottom: 50px; /* Reduce margin */
+        }
+    
+        /* Header text styles */
+        .header-text {
+            margin-top: 20%; /* Adjust for smaller screens */
+            font-size: 20px; /* Smaller font size */
+            text-align: center; /* Center text */
+        }
+    
+        .header-text h1 {
+            font-size: 30px; /* Smaller main header */
+        }
+    
+        /* Navigation adjustments */
+        nav {
+            padding: 10px 20px; /* Reduce navbar padding */
+            flex-direction: column; /* Stack logo and nav items */
+            align-items: center; /* Center items */
+        }
+    
+        .logo {
+            width: 80%; /* Make logo smaller */
+        }
+    
+        nav ul {
+            flex-direction: column; /* Stack nav items */
+            padding: 10px 0; /* Add padding for spacing */
+        }
+    
+        nav ul li {
+            margin: 10px 0; /* Adjust spacing between items */
+        }
+    
+        /* Social icons */
+        .social-icons a {
+            font-size: 24px; /* Smaller icons */
+        }
+    
+        /* Download CV button */
+        .btn-download {
+            font-size: 16px; /* Smaller button text */
+            padding: 8px 16px; /* Adjust padding */
+        }
+    
+        /* Movies section */
+        #movies .work-list {
+            grid-template-columns: 1fr; /* Single column on small screens */
+        }
+    
+        /* Digital section */
+        #digital .work-list {
+            grid-template-columns: 1fr; /* Single column on small screens */
+        }
+    
+        /* About section */
+        video {
+            width: 90%; /* Make video wider */
+            max-width: 100%; /* Ensure it doesn’t overflow */
+        }
+    
+        /* Subtitle styles */
+        .sub-title {
+            font-size: 40px; /* Smaller subtitle */
+        }
+    
+        /* Adjust margins for other elements as needed */
+    }
+    

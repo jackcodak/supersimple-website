@@ -1,0 +1,952 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: white;
+    color: black;
+}
+
+
+/*----------Header-------------*/
+#header {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../Resume/website-photo-background-removed.png);
+  background-size: 500px 560px; /* Adjust the size as needed */
+  background-position: 92.5% 100%; /* Position the image in the right lower corner */
+  background-attachment: fixed; /* Keep the background fixed during scrolling */
+  background-repeat: no-repeat; /* Prevent the background from repeating */
+  
+}
+
+#headertextimage {
+    width: 100%;
+    height: auto; /* Allow the height to adjust based on content */
+    background-color: transparent; /* Example distinct background color */
+    padding: 50px 0; /* Adjust padding to create space */
+    margin-top: 20px; /* Space above for separation */
+    margin-bottom: 100px;
+  }
+
+  #headertextimage p {
+    text-align: left; /* Ensure "Screenwriter" stays left-aligned */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove margin if needed */
+}
+
+#headertextimage h1 {
+    text-align: left; /* Ensure the main header stays left-aligned */
+}
+
+
+.container {
+  padding: 20px 65px 0px 65px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+
+/*----------Socials-------------*/
+.social-icons {
+    display: flex;
+    gap: 10px; /* Space between icons */
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+    
+}
+.social-icons {
+    display: flex;
+    gap: 10px; /* Space between icons */
+}
+.social-icons a:hover{
+    color: #bbcf9b;
+    transform: translateY(-5px);
+}
+
+/*----------Download CV-------------*/
+.btn-download {
+    display: inline-block; /* Make it an inline-block element */
+    margin-top: 15px; /* Space above the button */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #bbcf9b; /* Background color */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Transition effect */
+}
+
+.btn-download:hover {
+    background-color: #a3b68d; /* Darker background on hover */
+}
+
+
+/*----------Header Additional-------------*/
+.header-text{
+    margin-top: 5%;
+    font-size: 30px;
+    padding: 75px 0 0 0;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #bbcf9b;
+}
+
+/*----------Nav Bar-------------*/
+
+nav {
+    position: fixed; /* Make the navbar fixed */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch to the right */
+    background-color: white; /* Ensure visibility against background */
+    z-index: 10; /* Keep it above other content */
+    padding: 10px 100px; /* Adjust padding for spacing */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out the logo and nav items */
+  }
+  
+  .logo {
+    width: 45%; /* Adjust as needed */
+    margin: 0; /* Remove margin for better alignment */    
+  }
+  
+  nav ul {
+    display: flex; /* Ensure the list items are in a row */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+  }
+  
+  nav ul li {
+    list-style: none;
+    margin: 0 20px; /* Adjust spacing between items */
+  }
+  
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #bbcf9b;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  .nav-menu {
+    display: flex; /* Display items in a row */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-links li {
+    position: relative; /* Required for positioning the dropdown */
+}
+
+.dropdown-toggle {
+    cursor: pointer; /* Change cursor to pointer for dropdown toggle */
+}
+
+/* Dropdown styles */
+.dropdown {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%; /* Position below the parent li */
+    left: 0; /* Align to the left */
+    background: white; /* Background color */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Rounded corners */
+    z-index: 10; /* Ensure it appears above other content */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Show dropdown on toggle */
+.dropdown-toggle.active + .dropdown {
+    display: block; /* Show dropdown when active */
+}
+
+.dropdown-menu {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.dropdown-menu li {
+    padding: 5px 10px;
+    margin: 0;
+}
+
+.dropdown-menu li:last-child {
+    padding-bottom: 0; /* Ensure no extra padding at the bottom */
+}
+
+/* Make sure dropdown items have no additional spacing */
+.dropdown li {
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Link styles in dropdown */
+.dropdown li a {
+    display: block; /* Make links full width */
+    padding: 5px 10px; /* Adjust padding for links to minimize gap */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    margin: 0; /* Remove margin */
+}
+
+.dropdown li a:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}
+
+/* Show dropdown on hover */
+.nav-links li:hover .dropdown {
+    display: block; /* Show dropdown */
+}
+
+.menu-toggle {
+    display: none; /* Show toggle on small screens */
+    cursor: pointer; /* Ensure cursor changes to pointer */
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px); /* Adjust the first bar */
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px); /* Adjust the third bar */
+}
+
+/* Ensuring the transform origins are centered */
+.bar:nth-child(1), .bar:nth-child(3) {
+    transform-origin: center; /* Ensures rotation happens from the center */
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto; /* Space between bars */
+    background-color: black; /* Color of the bars */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+
+/* -------Movies----------- */
+#movies {
+    padding-top: 50px; /* Match navbar height */
+    margin-top: -10px; /* Pull the section up */ 
+}
+  
+
+#movies .work-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-rows: repeat(2, auto); /* Two rows */
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+/* Ensure .work elements are styled correctly as clickable links */
+.work {
+    position: relative;
+    display: block; /* Make sure it behaves as a block-level element */
+    width: 100%; /* Adjust width as needed */
+    height: 100%; /* Adjust height as needed */
+    overflow: hidden; /* Hide any overflow */
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit text color from parent */
+  }
+  
+  /* Style for images */
+  .work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s; /* Optional: transition for hover effect */
+  }
+  
+  /* Style for the overlay layer */
+  .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(192, 44, 63, 0.75), rgba(192, 44, 63, 0.75)); /* Gradient with transparency */
+    opacity: 0; /* Start with layer invisible */
+    transition: opacity 0.5s; /* Smooth transition for opacity change */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Center-align text */
+  }
+  
+  /* Make text white inside .layer */
+  .layer h2,
+  .layer h3,
+  .layer p {
+    color: white; /* Set text color to white */
+  }
+  
+  /* Show the .layer on hover */
+  .work:hover .layer {
+    opacity: 1; /* Make layer fully visible when hovered */
+  }
+  
+  /* Optional: scale image on hover */
+  .work:hover img {
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+
+.btn {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #bbcf9b;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  transition: background 0.5s;
+}
+
+.btn:hover {
+  background: #bbcf9b;
+}
+
+/* -----------Digital-------------*/
+/* Style for the digital section work list */
+#digital {
+    padding-top: 50px; /* Match navbar height */
+    margin-top: -10px; /* Pull the section up */
+}
+
+#digital .work-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-auto-rows: 300px; /* Row height */
+    gap: 10px; /* Space between items */
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  #digital .work {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+  }
+  
+  #digital .work img {
+    width: 100%; /* Ensure image fits container width */
+    height: 100%; /* Ensure image fits container height */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    border: 3px solid black; /* Default border */
+    transition: transform 0.5s, border-width 0.5s; /* Transition for border-width */
+  }
+  
+  #digital .work:hover img {
+    transform: scale(1.1); /* Slight zoom effect */
+    border: 4px solid black; /* Thicker border on hover */
+  }
+  
+  #digital .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(161,161,161, 0.75), rgba(161,161,161, 0.75));
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  #digital .layer h2,
+  #digital .layer h3,
+  #digital .layer p {
+      margin: 0; /* Remove default margin */
+  }
+  
+  #digital .work:hover .layer {
+    opacity: 1; /* Make layer fully visible on hover */
+  }
+  
+
+  
+
+/* -----------About--------------- */
+#about {
+    padding-top: 50px; /* Match navbar height */
+    margin-top: -50px; /* Pull the section up */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+}
+
+.row {
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    width: 100%; /* Full width */
+}
+
+.sub-title {
+    margin-bottom: 0px; /* Space between title and video */
+}
+
+.video-container {
+    width: 60%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the video */
+    display: flex; /* Centering */
+    justify-content: center; /* Center the video */
+    align-items: center; /* Center vertically */
+    position: relative; /* Ensure positioning */
+}
+
+.iframe-wrapper {
+    position: relative;
+    width: 100%; /* Full width of the container */
+    padding-top: 50%; /* This defines the height based on width (aspect ratio) */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Optional: remove border */
+}
+
+.h2about {
+    text-align: center; /* Center the text */
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: left; /* Left-align the text */
+    margin: 0 auto; /* Center the paragraph */
+    padding: 0 20px; /* Add horizontal padding for spacing */
+    max-width: 800px; /* Set a maximum width for the paragraph */
+}
+
+/* -------------About-Socials---------- */
+.social-iconsabout {
+    margin-top: 10px; /* Decreased from 30px to 10px */
+    text-align: center; /* This is not necessary with flex */
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+}
+
+.social-iconsabout a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+  
+.social-iconsabout a:hover {
+    color: #bbcf9b;
+    transform: translateY(-5px);
+}
+
+/* -------------Email at bottom---------- */
+
+.bottom-content {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Adjust as needed for your layout */
+    margin: 0 auto; /* Center the container */
+}
+
+.hbottomtab {
+    padding-left: 0; /* Remove default margin for better alignment */
+    margin-top: 5px; /* Space above email text */
+    margin-bottom: 15px; /* Increase space below the email text */
+}
+
+.social-iconsabout {
+    display: flex; /* Make social icons a flex container */
+    gap: 10px; /* Space between icons */
+}
+
+.social-iconsabout a {
+    text-decoration: none; /* Remove underline */
+    color: #ababab; /* Inherit color */
+    font-size: 30px; /* Adjust icon size */
+}
+
+
+
+
+/* -------------Tabs and Subtitles---------- */
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: black;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #bbcf9b;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #bbcf9b;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+
+/* -----------------css for small screens--------- */
+@media (max-width: 600px) { 
+body {
+    overflow-x: hidden; /* Hide horizontal overflow */
+    margin: 0; /* Remove default margin */
+}
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../Resume/website-photo-background-removed.png);
+    background-size: 175px 201px; /* Adjust the size as needed */
+    background-position: 51% 100%; /* Position the image */
+    background-attachment: fixed; /* Fixed background */
+    background-repeat: no-repeat; /* Prevent repeating */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 0;
+}
+
+#headertextimage {
+    width: 100%;
+    background-color: transparent;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    margin-top: 0; /* Reduced top margin */
+    padding: 0;
+}
+
+#headertextimage p,
+#headertextimage h1 {
+    text-align: center; /* Center text */
+    margin: 0; /* Remove margin */
+    padding: 0;
+}
+
+.container {
+        padding: 20px 30px; /* Adjust padding for mobile */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+        max-width: 100vw; /* Prevent overflow */
+    }
+
+.social-icons {
+    display: flex;
+    gap: 10px; /* Space between icons */
+    justify-content: center; /* Center the icons */
+    margin: -4px 0; /* Space around the icons */
+    padding: 0; /* Remove extra padding */
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 35px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    color: #bbcf9b;
+    transform: translateY(-5px);
+}
+
+.btn-download {
+    display: inline-block; /* Make it an inline-block element */
+    margin: 5px 0 5px -15px;
+    background-color: #bbcf9b; /* Background color */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Button padding */
+}
+
+
+nav {
+    padding: 20px 20px; /* Increased padding */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    justify-content: center; /* Center items */
+    width: 100%; /* Full width */
+}
+
+.nav-menu {
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.nav-menu.active {
+    display: flex; /* Show menu when active */
+}
+
+.nav-menu li:hover .dropdown {
+    display: block; /* Show dropdown on hover for small screens */
+}
+
+
+
+
+/* Dropdown styles */
+.dropdown {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%; /* Position below the parent li */
+    left: 0; /* Align to the left */
+    background: white; /* Background color */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Rounded corners */
+    z-index: 10; /* Ensure it appears above other content */
+    padding: 0; /* Remove padding */
+    margin-top: -5px; /* Pull it up slightly */
+}
+    
+    .dropdown-toggle.active + .dropdown {
+    display: block; /* Show dropdown when active */
+    }
+
+    .dropdown-menu {
+        margin: 0; /* Remove margin */
+        padding: 0; /* Remove padding */
+    }
+
+  /* Reduce padding for dropdown items to minimize gap */
+  .dropdown-menu li {
+    padding: 5px 10px; /* Adjust padding for items */
+    margin: 0; /* Remove margin to minimize gap */
+    border-bottom: 1px solid #ccc; /* Optional: add a border */
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none; /* Remove the bottom border on the last item */
+}
+
+
+.dropdown.active .dropdown-menu {
+    display: block; /* Show dropdown when parent is active */
+}
+
+.logo-link {
+    flex-grow: 1; /* Allow link to grow and take up space */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the logo */
+    text-decoration: none; /* Remove underline */
+}
+
+.logo-wrapper {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the logo within the wrapper */
+}
+
+.logo {
+    width: auto; /* Allow logo to maintain its width */
+    max-width: 300px; /* Max width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* No margin */
+}
+
+
+nav ul {
+    flex-direction: column; /* Stack nav items */
+    align-items: center; /* Center align items */
+    margin-top: 10px; /* Add some space above */
+}
+
+nav ul li {
+    margin: 8px 0; /* Adjust spacing between items */
+}
+
+.menu-toggle {
+    display: block; /* Show toggle on small screens */
+    margin-left: auto; /* Push the hamburger icon to the right */
+    cursor: pointer; /* Ensure cursor changes to pointer */
+    margin-top: -36px;
+}
+
+.nav-links {
+    display: none; /* Hide links by default on mobile */
+    margin: 10px;
+}
+
+.nav-links.active {
+    display: flex; /* Show links when active */
+    flex-direction: column; /* Stack them vertically */
+}
+
+}
+/*-----------ABOUT-----------------*/
+@media (max-width: 600px) {
+    .container {
+        align-items: flex-start; /* Align items to the left for small screens */
+    }
+
+    #about {
+        padding-top: 40px; /* Adjust padding for small screens */
+        margin-top: -40px; /* Adjust as needed to pull up the section */
+    }
+
+    .video-container {
+        width: 100%; /* Make the video container full width on small screens */
+        margin-top: 10px; /* Adjust margin as needed */
+    }
+
+    .h2about {
+        margin-top: 20px; /* Adjust margin for small screens */
+        margin-bottom: 8px; /* Reduce space below the title */
+    }
+
+    p {
+        padding: 0 10px; /* Reduce horizontal padding */
+    }
+}
+
+
+/*---------------MOVIES----------------*/
+@media (max-width: 600px) { 
+
+#movies .work-list {
+        grid-template-columns: 1fr; /* Change to one column */
+        padding-top: 50px; /* Reduced padding for small screens */
+        margin-top: -50px; /* Adjust as needed to pull up the section */
+    }
+
+
+/* Ensure .work elements are styled correctly as clickable links */
+.work {
+    position: relative; /* Use relative positioning */
+    display: block; /* Make sure it behaves as a block-level element */
+    width: 100%; /* Full width */
+    height: 250px; /* Full height */
+    overflow: hidden; /* Hide any overflow */
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit text color from parent */
+}
+
+/* Style for images */
+.work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the container */
+    transition: transform 0.5s; /* Optional: transition for hover effect */
+}
+
+/* Style for the overlay layer */
+.layer {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(rgba(192, 44, 63, 0.75), rgba(192, 44, 63, 0.75)); /* Gradient with transparency */
+opacity: 0; /* Start with layer invisible */
+transition: opacity 0.5s; /* Smooth transition for opacity change */
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding: 20px;
+box-sizing: border-box;
+text-align: center; /* Center-align text */
+}
+
+/* Make text white inside .layer */
+.layer h2,
+.layer h3,
+.layer p {
+color: white; /* Set text color to white */
+}
+
+/* Show the .layer on hover */
+.work:hover .layer {
+opacity: 1; /* Make layer fully visible when hovered */
+}
+
+/* Optional: scale image on hover */
+.work:hover img {
+transform: scale(1.1); /* Slight zoom effect */
+}
+
+.btn {
+display: block;
+margin: 50px auto;
+width: fit-content;
+border: 1px solid #bbcf9b;
+padding: 14px 50px;
+border-radius: 6px;
+text-decoration: none;
+color: black;
+transition: background 0.5s;
+}
+
+.btn:hover {
+background: #bbcf9b;
+}
+
+}
+
+
+/* -----------Digital-------------*/
+/* Media Query for Small Screens - Digital Section */
+/* Media Query for Small Screens - Digital Section */
+@media (max-width: 600px) { 
+    #digital {
+        padding-top: 75px; /* Reduced padding for small screens */
+        margin-top: -60px; /* Adjust as needed to pull up the section */
+    }
+
+    #digital .work-list {
+        display: grid;
+        grid-template-columns: 1fr; /* One column for small screens */
+        gap: 5px; /* Adjust gap between items */
+        margin: 0; /* Remove any margin */
+        padding: 0; /* Ensure no padding */
+        width: 100%; /* Full width */
+        grid-auto-rows: auto; /* Change to auto height for rows */
+    }
+
+    #digital .work {
+        width: 100%; /* Full width */
+        height: 250px; /* Fixed height */
+        margin: 0; /* Remove margin */
+    }
+
+    #digital .work img {
+        width: 100%; /* Ensure image fits container width */
+        height: 100%; /* Ensure image fits container height */
+        object-fit: cover; /* Cover the area, cropping if necessary */
+    }
+
+    .container {
+        padding: 5px 15px; /* Adjust horizontal padding for small screens */
+        margin: 10px auto; /* Center the container */
+    }
+
+
+    .bottom-content {
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center horizontally */
+        width: 100%; /* Full width */
+        max-width: 800px; /* Adjust as needed for your layout */
+        margin: 0px auto 0; /* Adjust top margin for better spacing */
+    }
+    
+    .hbottomtab {
+        padding-left: 0; /* Remove default margin for better alignment */
+        margin-top: 0px; /* Space above email text */
+        margin-bottom: 15px; /* Increase space below the email text */
+    }
+    
+    .social-iconsabout {
+        display: flex; /* Make social icons a flex container */
+        gap: 10px; /* Space between icons */
+    }
+    
+    .social-iconsabout a {
+        text-decoration: none; /* Remove underline */
+        color: #ababab; /* Inherit color */
+        font-size: 30px; /* Adjust icon size */
+    }
+}

@@ -19,7 +19,7 @@ body{
 #header {
   width: 100%;
   height: 100vh;
-  background-image: url(../../Resume/website-photo-background-removed.png);
+  background-image: url(website-photo-background-removed.png);
   background-size: 500px 560px; /* Adjust the size as needed */
   background-position: 92.5% 100%; /* Position the image in the right lower corner */
   background-attachment: fixed; /* Keep the background fixed during scrolling */

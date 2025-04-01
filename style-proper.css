@@ -591,7 +591,7 @@ p {
 /* -----------------css for small screens--------- */
 @media (max-width: 600px) { 
 body {
-    overflow-x: visible; /* Hide horizontal overflow */ /*Maanav Changed*/
+    overflow-x: scroll; /* Hide horizontal overflow */ /*Maanav Changed*/
     margin: 0; /* Remove default margin */
 }
 
@@ -601,7 +601,7 @@ body {
     background-image: url(../../Resume/website-photo-background-removed.png);
     background-size: 175px 201px; /* Adjust the size as needed */
     background-position: 51% 100%; /* Position the image */
-    background-attachment: fixed; /* Fixed background */
+    background-attachment: scroll; /* Fixed background */
     background-repeat: no-repeat; /* Prevent repeating */
     display: flex; /* Use flexbox */
     flex-direction: column; /* Stack items vertically */
@@ -610,7 +610,7 @@ body {
 }
 
 #headertextimage {
-    width: 100%;
+    width: 80%;
     background-color: transparent;
     display: flex; /* Use flexbox */
     flex-direction: column; /* Stack items vertically */

@@ -480,7 +480,7 @@ nav {
 }
 
 p {
-    text-align: left; /* Left-align the text */
+    text-align: center; /* Left-align the text */
     margin: 0 auto; /* Center the paragraph */
     padding: 0 20px; /* Add horizontal padding for spacing */
     max-width: 800px; /* Set a maximum width for the paragraph */

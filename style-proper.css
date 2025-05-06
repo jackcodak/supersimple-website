@@ -598,9 +598,9 @@ body {
 #header {
     width: 100%;
     height: 100vh;
-    background-image: url(../../Resume/website-photo-background-removed.png);
-    background-size: 175px 201px; /* Adjust the size as needed */
-    background-position: 51% 100%; /* Position the image */
+    background-image: url(website-photo-background-removed.png);
+    background-size: 80%; /* Adjust the size as needed */
+    background-position: 57% 100%; /* Position the image */
     background-attachment: fixed; /* Fixed background */
     background-repeat: no-repeat; /* Prevent repeating */
     display: flex; /* Use flexbox */

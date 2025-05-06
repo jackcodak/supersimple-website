@@ -591,16 +591,16 @@ p {
 /* -----------------css for small screens--------- */
 @media (max-width: 600px) { 
 body {
-    overflow-x: hidden; /* Hide horizontal overflow */ /*Maanav Changed*/
+    overflow-x: hidden; /* Hide horizontal overflow */
     margin: 0; /* Remove default margin */
 }
 
 #header {
     width: 100%;
     height: 100vh;
-    background-image: url(website-photo-background-removed.png);
-    background-size: 50%; /* Adjust the size as needed */
-    background-position: 57% 100%; /* Position the image */
+background-image: url(website-photo-background-removed.png);   
+    background-size: 43%; /* Adjust the size as needed */
+    background-position: 50% 100%; /* Position the image */
     background-attachment: fixed; /* Fixed background */
     background-repeat: no-repeat; /* Prevent repeating */
     display: flex; /* Use flexbox */
@@ -620,11 +620,18 @@ body {
     padding: 0;
 }
 
-#headertextimage p,
-#headertextimage h1 {
-    text-align: center; /* Center text */
-    margin: 0; /* Remove margin */
+#headertextimage p {
+    text-align: center;
+    margin: 0;
     padding: 0;
+    font-size: 40px; /* Add or modify this line to set paragraph size */
+}
+
+#headertextimage h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 47px; /* Add or modify this line to set heading size */
 }
 
 .container {

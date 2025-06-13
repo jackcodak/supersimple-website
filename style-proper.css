@@ -15,44 +15,6 @@ body{
 }
 
 
-/*----------Header-------------*/
-#header {
-  width: 100%;
-  height: 100vh;
-  background-image: url(website-photo-background-removed.png);
-  background-size: 500px 560px; /* Adjust the size as needed */
-  background-position: 92.5% 100%; /* Position the image in the right lower corner */
-  background-attachment: fixed; /* Keep the background fixed during scrolling */
-  background-repeat: no-repeat; /* Prevent the background from repeating */
-  
-}
-
-#headertextimage {
-    width: 100%;
-    height: auto; /* Allow the height to adjust based on content */
-    background-color: transparent; /* Example distinct background color */
-    padding: 50px 0; /* Adjust padding to create space */
-    margin-top: 20px; /* Space above for separation */
-    margin-bottom: 100px;
-  }
-
-  #headertextimage p {
-    text-align: left; /* Ensure "Screenwriter" stays left-aligned */
-    padding: 0; /* Remove any padding */
-    margin: 0; /* Remove margin if needed */
-}
-
-#headertextimage h1 {
-    text-align: left; /* Ensure the main header stays left-aligned */
-}
-
-
-.container {
-  padding: 20px 65px 0px 65px;
-  box-sizing: border-box; /* Ensure padding is included in the width */
-}
-
-
 /*----------Socials-------------*/
 .social-icons {
     display: flex;
@@ -206,7 +168,6 @@ nav {
 }
 
 
-
 .dropdown-menu li {
     padding: 5px 10px;
     margin: 0;
@@ -270,99 +231,767 @@ nav {
     transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 
+/*----------Header-------------*/
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../Resume/website-photo-background-removed.png);
+    background-size: 500px 560px; /* Adjust the size as needed */
+    background-position: 92.5% 100%; /* Position the image in the right lower corner */
+    background-attachment: fixed; /* Keep the background fixed during scrolling */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    
+  }
+  
+  #headertextimage {
+      width: 100%;
+      height: auto; /* Allow the height to adjust based on content */
+      background-color: transparent; /* Example distinct background color */
+      padding: 50px 0; /* Adjust padding to create space */
+      margin-top: 20px; /* Space above for separation */
+      margin-bottom: 100px;
+    }
+  
+    #headertextimage p {
+      text-align: left; /* Ensure "Screenwriter" stays left-aligned */
+      padding: 0; /* Remove any padding */
+      margin: 0; /* Remove margin if needed */
+  }
+  
+  #headertextimage h1 {
+      text-align: left; /* Ensure the main header stays left-aligned */
+  }
+  
+  
+  .container {
+    padding: 20px 65px 0px 65px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
 
-/* -------Movies----------- */
-#movies {
+/* -----------About--------------- */
+#about {
     padding-top: 50px; /* Match navbar height */
-    margin-top: -10px; /* Pull the section up */ 
-}
-  
+    margin-top: -50px; /* Pull the section up */
+} 
 
-#movies .work-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  grid-template-rows: repeat(2, auto); /* Two rows */
-  margin-top: 20px;
-  width: 100%;
-}
-
-
-/* Ensure .work elements are styled correctly as clickable links */
-.work {
-    position: relative;
-    display: block; /* Make sure it behaves as a block-level element */
-    width: 100%; /* Adjust width as needed */
-    height: 100%; /* Adjust height as needed */
-    overflow: hidden; /* Hide any overflow */
-    text-decoration: none; /* Remove underline from the link */
-    color: inherit; /* Inherit text color from parent */
-  }
-  
-  /* Style for images */
-  .work img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s; /* Optional: transition for hover effect */
-  }
-  
-  /* Style for the overlay layer */
-  .layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(192, 44, 63, 0.75), rgba(192, 44, 63, 0.75)); /* Gradient with transparency */
-    opacity: 0; /* Start with layer invisible */
-    transition: opacity 0.5s; /* Smooth transition for opacity change */
+#about .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center; /* Center-align text */
-  }
-  
-  /* Make text white inside .layer */
-  .layer h2,
-  .layer h3,
-  .layer p {
-    color: white; /* Set text color to white */
-  }
-  
-  /* Show the .layer on hover */
-  .work:hover .layer {
-    opacity: 1; /* Make layer fully visible when hovered */
-  }
-  
-  /* Optional: scale image on hover */
-  .work:hover img {
-    transform: scale(1.1); /* Slight zoom effect */
-  }
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+}
 
-.btn {
+.row {
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    width: 100%; /* Full width */
+}
+
+.sub-title {
+    margin-bottom: 0px; /* Space between title and video */
+}
+
+/* --------- About Video ------ */
+#about .about-video-container {
+  width: 100%;
+  max-width: 640px;     /* Matches  */
+  padding: 0 16px;       /* Matches  */
+  margin: 0 auto;        /* Centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#about .about-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;   /* 16:9 aspect ratio */
+}
+
+#about .about-iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;   /* Matches  */
+}
+
+
+
+/* About Name */
+
+#about .sub-title {
+  text-align: left;
+    padding-left: 67.5px; /* Adjust as needed */
+    margin-bottom: 10px;
+}
+
+#about .h2about {
+    text-align: center; /* Center the text */
+    margin-top: 0px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    
+}
+
+#about p {
+    text-align: left;
+    margin: 0 auto 20px auto; /* Add 20px bottom margin */
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+#about .big-text {
+    font-size: 18px; /* h3 size */
+    line-height: 1.4;
+  }
+  
+
+#about .special-highlight {
+    color: #bbcf9b; /* Replace with your brand color */
+  }
+  
+
+
+/* ------COMMchella----- */
+  /* ---- COMMchella Container ------ */
+  #commchella {
+    padding-top: 50px; /* Match navbar height */
+    
+    margin-top: -10px; /* Pull the section up */
+  }
+  
+.commchella-container {
+  width: 100%;
+  padding: 0 20px;
+    padding-bottom: 60px;
+
+}
+
+/* ----- COMMchella Video ----*/
+
+.commchella-video-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 27px;
+}
+
+.commchella-video-wrapper {
+  width: 100%;
+  max-width: 640px;
+  padding: 0 16px;
+}
+
+.commchella-video-wrapper video {
+  width: 100%;
+  height: auto;
   display: block;
-  margin: 50px auto;
-  width: fit-content;
-  border: 1px solid #bbcf9b;
-  padding: 14px 50px;
-  border-radius: 6px;
-  text-decoration: none;
-  color: black;
-  transition: background 0.5s;
+  border-radius: 12px;
 }
 
-.btn:hover {
-  background: #bbcf9b;
+/* ----- COMMchella Name, title, text, ----*/
+/* ----- COMMchella Header ----*/
+.commchella-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: black;
+     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    gap: 12px;
 }
+
+.commchella-header {
+  text-align: center;
+}
+
+/* ----- COMMchella Text & Featured ----*/
+
+.commchella-text {
+  text-align: center;
+  font-weight: normal; /* Ensures the text is not bold */
+  margin-bottom: 10px;
+  line-height: 2; /* Adjust spacing between lines */
+}
+
+.featured-text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal;
+  max-width: 750px;
+  text-align: left;
+  font-size: 17px;
+  line-height: 1.2;
+  margin-left: 330px;
+
+}
+
+.featured-label {
+  display: block;
+  margin-bottom: 6px;  /* Minimal spacing between text and logos */
+  font-weight: normal;
+  font-size: 16px;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+
+/* ------ COMMchella Feature Images ----------- */
+.hover-img {
+  vertical-align: center;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 16px;
+}
+
+/* Custom sizes */
+.hover-img.targum {
+  height: 30px;
+    margin-left: -3.5px;  /* Adjust this value as needed */
+
+}
+
+.hover-img.hercampus {
+  height: 27px;
+  margin-left: 0.8px;
+}
+
+.hover-img.sci {
+  height: 32.5px;
+  margin-left: 1.3px;
+}
+
+.hover-img.targum:hover {
+  content: url('images/LGDailyTargum.png');
+  height: 29.9px; /* Lock to same height */
+}
+
+
+.hover-img.hercampus:hover {
+  content: url('images/LGHercampug.png');
+}
+
+.hover-img.sci:hover {
+  content: url('images/LGSCI.png');
+}
+
+
+
+/* ----- COMMchella Icon ----*/
+.commchella-icon {
+  color: black;
+  font-size: 40px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+.commchella-icon:hover {
+  transform: translateY(-5px);
+  color: #C13584; /* Optional Instagram hover color */
+}
+
+/* ------ COMMchella Stats ---------- */
+.commchella-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+      margin-bottom: 10px;
+
+  }
+  
+  .stat {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    font-size: 50px;
+    font-weight: bold;
+    color: #bbcf9b;
+  }
+  
+  /* Triggered on scroll */
+  .stat.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .commchella-stats .stat:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  
+  .commchella-stats .stat:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+  
+  .commchella-stats .stat:nth-child(3) {
+    transition-delay: 0.5s;
+  }
+   
+  /* Centering wrapper */
+  .stats-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+/* ------ COMMchella Graphics ----------- */
+.commchella-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+/* Work Item */
+.commchella-work {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  display: block;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+/* Image Styling */
+.commchella-work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* Overlay Layer */
+.commchella-work .layer {
+  position: absolute;
+  inset: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Hover Effects */
+.commchella-work:hover img {
+  transform: scale(1.05);
+}
+
+.commchella-work:hover .layer {
+  opacity: 1;
+}  
+
+
+/* --------- HITW ------------ */
+/* --------- HITW Containers ------------ */
+#HITW {
+  padding-top: 75px;
+  margin-top: -10px;
+}
+
+.HITW-container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* --------- HITW Name, title, text ------------ */
+.HITW-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.HITW-text {
+  text-align: center;
+  font-weight: normal;
+    margin-top: -5px;       /* Pull upward to close the gap */
+  margin-bottom: 55px;
+  line-height: 2;
+}
+
+.HITW-subheading {
+  text-align: center;
+  font-weight: bold;
+    font-size: 43px;  /* Match this to .HITW-BT */
+
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 1.2;
+}
+
+.HITW-MV-text {
+  text-align: center;
+  margin-top: 0px;  /* Adjust this value as needed */
+  margin-bottom: 20px;
+  line-height: 2;
+  font-weight: normal;
+}
+
+.HITW-BT {
+  font-weight: bold;
+  font-size: 60px;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+.HITW-BT-Subheading {
+  text-align: center;
+  margin-top: 0px;        /* remove space above subheading */
+  margin-bottom: 10px;    /* keep space below if needed */
+  font-weight: normal;
+  line-height: 2;         /* keep generous line spacing inside subheading */
+}
+
+
+.HITW-BT-Subheading strong {
+  color: #000000; /* Replace with any color you want */
+  font-weight: 1000;
+}
+
+
+
+
+/* --------- HITW Videos ------------ */
+/* === HITW VIDEO GRID === */
+#HITW .HITW-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 0px auto;
+  padding: 0 16px;
+}
+
+#HITW .HITW-youtube-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#HITW .HITW-youtube-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ---------- Behind the General Photos -------- */
+#HITW .HITW-allphoto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  max-width: 1100px;
+  margin: 70px auto; /* centers it */
+  padding: 0 16px;
+}
+
+#HITW .HITW-allphoto-grid .work {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+#HITW .HITW-allphoto-grid .work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Behind the Scenes Photos -------- */
+#HITW .HITW-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  max-width: 1100px;
+  margin: 70px auto; /* centers it */
+  padding: 0 16px;
+}
+
+#HITW .HITW-photo-grid .work {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+#HITW .HITW-photo-grid .work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#HITW .work.clicked {
+  transform: scale(1.05);
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+#HITW .work {
+  transition: transform 0.3s ease-in-out;
+  cursor: zoom-in;
+}
+
+/* ------ Lightbox ----- */
+#HITW .lightbox.hidden {
+  display: none;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3); /* Lighter background for transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  z-index: 9999;
+  backdrop-filter: blur(4px); /* Optional: subtle blur of background */
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+.lightbox img {
+  width: 60vw;       /* Shrinks from full screen */
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3); /* Optional: soft glow */
+  cursor: zoom-out;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.6);
+  border: none;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+
+.lightbox-arrow:hover {
+  background: rgba(255,255,255,0.9);
+}
+.lightbox-arrow.left {
+  left: 30px;
+}
+.lightbox-arrow.right {
+  right: 30px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Normal lightbox image wrapper for regular images */
+.lightbox-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  max-height: 70vh;
+}
+
+/* Image itself */
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* For BT-PR: 5:7 container ratio */
+.bt-pr-lightbox .lightbox-image-wrapper {
+  width: auto;
+  height: 80vh;
+  aspect-ratio: 5 / 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bt-pr-lightbox img {
+  width: auto;
+  height: 100%;
+  aspect-ratio: 5 / 7;
+  object-fit: cover; /* ensures it fills the space exactly */
+  border-radius: 8px;
+}
+
+
+.lightbox img.bt-pr-lightbox {
+  width: auto;
+  height: 97vh;     /* increase height */
+  max-width: 90vw;
+  aspect-ratio: 5 / 7;
+}
+
+/* -----------Breads & Threads-------------*/
+/* -----------Breads & Threads Icon-------------*/
+.BT-icon {
+  color: black;
+  font-size: 45px; /* closer in visual weight to h1 */
+  margin-top: 4px; /* adjust if icon looks slightly lower or higher */
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+.BT-icon:hover {
+  transform: translateY(-5px);
+  color: #C13584; /* Optional Instagram hover color */
+}
+
+.HITW-BT-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers everything horizontally */
+  gap: 10px; /* space between text and icon */
+  margin-bottom: 0px;
+  line-height: 1.2;
+}
+
+
+/* -----------Breads & Threads Posters-------------*/
+.HITW-BT-Posters {
+  display: flex;
+  gap: 16px; /* Adjust spacing between items */
+  justify-content: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+.HITW-BT-Paint {
+  flex: 1 1 30%;         /* About one-third of the row */
+  max-width: 340px;      /* 3 * 340px + 2 * 16px gap ≈ 1100px */
+  aspect-ratio: 5 / 7;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.HITW-BT-Paint img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+}
+
+
+/* -----------Breads & Threads Press Release-------------*/
+.HITW-row-pitches {
+  display: flex;
+  gap: 16px; /* Adjust spacing between items */
+  justify-content: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+.HITW-BT-PR {
+  flex: 1 1 30%;        /* Allow ~3 per row */
+  max-width: 340px;     /* 3 * 340px + 2 * 16px gap ≈ 1036px (fits within 1100px) */
+  aspect-ratio: 5 / 7;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid black;
+}
+
+
+.HITW-BT-PR img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+}
+
+
+
+
 
 /* -----------Digital-------------*/
 /* Style for the digital section work list */
 #digital {
-    padding-top: 50px; /* Match navbar height */
-    margin-top: -10px; /* Pull the section up */
+    padding-top: 50px; 
+    margin-top: -10px;
 }
 
 #digital .work-list {
@@ -427,64 +1056,7 @@ nav {
 
   
 
-/* -----------About--------------- */
-#about {
-    padding-top: 50px; /* Match navbar height */
-    margin-top: -50px; /* Pull the section up */
-}
 
-.container {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the left */
-}
-
-.row {
-    display: flex;
-    flex-direction: column; /* Ensure content stacks vertically */
-    width: 100%; /* Full width */
-}
-
-.sub-title {
-    margin-bottom: 0px; /* Space between title and video */
-}
-
-.video-container {
-    width: 60%; /* Adjust width as needed */
-    margin: 0 auto; /* Center the video */
-    display: flex; /* Centering */
-    justify-content: center; /* Center the video */
-    align-items: center; /* Center vertically */
-    position: relative; /* Ensure positioning */
-}
-
-.iframe-wrapper {
-    position: relative;
-    width: 100%; /* Full width of the container */
-    padding-top: 50%; /* This defines the height based on width (aspect ratio) */
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none; /* Optional: remove border */
-}
-
-.h2about {
-    text-align: center; /* Center the text */
-    margin-top: 35px;
-    margin-bottom: 10px;
-}
-
-p {
-    text-align: center; /* Left-align the text */
-    margin: 0 auto; /* Center the paragraph */
-    padding: 0 20px; /* Add horizontal padding for spacing */
-    max-width: 800px; /* Set a maximum width for the paragraph */
-}
 
 /* -------------About-Socials---------- */
 .social-iconsabout {
@@ -598,7 +1170,7 @@ body {
 #header {
     width: 100%;
     height: 100vh;
-background-image: url(website-photo-background-removed.png);   
+    background-image: url(../../Resume/website-photo-background-removed.png);
     background-size: 43%; /* Adjust the size as needed */
     background-position: 50% 100%; /* Position the image */
     background-attachment: fixed; /* Fixed background */
@@ -633,6 +1205,8 @@ background-image: url(website-photo-background-removed.png);
     padding: 0;
     font-size: 47px; /* Add or modify this line to set heading size */
 }
+
+
 
 .container {
         padding: 20px 30px; /* Adjust padding for mobile */
@@ -810,10 +1384,10 @@ nav ul li {
 }
 
 
-/*---------------MOVIES----------------*/
+/*---------------HITW----------------*/
 @media (max-width: 600px) { 
 
-#movies .work-list {
+#HITW .work-list {
         grid-template-columns: 1fr; /* Change to one column */
         padding-top: 50px; /* Reduced padding for small screens */
         margin-top: -50px; /* Adjust as needed to pull up the section */
@@ -873,22 +1447,6 @@ opacity: 1; /* Make layer fully visible when hovered */
 /* Optional: scale image on hover */
 .work:hover img {
 transform: scale(1.1); /* Slight zoom effect */
-}
-
-.btn {
-display: block;
-margin: 50px auto;
-width: fit-content;
-border: 1px solid #bbcf9b;
-padding: 14px 50px;
-border-radius: 6px;
-text-decoration: none;
-color: black;
-transition: background 0.5s;
-}
-
-.btn:hover {
-background: #bbcf9b;
 }
 
 }
@@ -957,3 +1515,10 @@ background: #bbcf9b;
         font-size: 30px; /* Adjust icon size */
     }
 }
+
+@media (max-width: 768px) {
+    .commchella-stats {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }

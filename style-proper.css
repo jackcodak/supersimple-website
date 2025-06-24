@@ -270,8 +270,7 @@ nav {
 
 /* -----------About--------------- */
 #about {
-    padding-top: 50px; /* Match navbar height */
-    margin-top: -50px; /* Pull the section up */
+  margin-top: 50px;
 } 
 
 #about .container {
@@ -287,71 +286,69 @@ nav {
 }
 
 .sub-title {
-    margin-bottom: 0px; /* Space between title and video */
+    margin-bottom: 0px; 
 }
 
-/* --------- About Video ------ */
-#about .about-video-container {
+/* --------- About Photo ------ */
+#about .About-Photo {
   width: 100%;
-  max-width: 640px;     /* Matches  */
-  padding: 0 16px;       /* Matches  */
-  margin: 0 auto;        /* Centered */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  max-width: 674px; 
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
 }
 
-#about .about-iframe-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;   /* 16:9 aspect ratio */
-}
-
-#about .about-iframe-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+#about .About-Photo img {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 12px;   /* Matches  */
+  object-fit: cover; 
+  display: block;
 }
 
 
 
 /* About Name */
+#about {
+  text-align: center; /* This ensures the inline-block element is centered */
+}
 
 #about .sub-title {
-  text-align: left;
-    padding-left: 67.5px; /* Adjust as needed */
-    margin-bottom: 10px;
+  display: inline-block;
+  margin: 100px auto 0 auto;
+  text-align: center;
 }
 
-#about .h2about {
-    text-align: center; /* Center the text */
-    margin-top: 0px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    
+#about .sub-title::after {
+  content: "";
+  display: block;
+  height: 5.5px;
+  background-color: #73c62a;
+  width: 25%;
+  margin: 8px auto 80px auto;
+  border-radius: 2px;
 }
 
-#about p {
-    text-align: left;
-    margin: 0 auto 20px auto; /* Add 20px bottom margin */
-    padding: 0 20px;
-    max-width: 800px;
+#about p.big-text {
+  line-height: 45px;
+  font-size: 20px;
+  text-align: center;
+  max-width: 1348px;
+  margin: 0 auto 80px auto;
 }
-
-#about .big-text {
-    font-size: 18px; /* h3 size */
-    line-height: 1.4;
-  }
-  
 
 #about .special-highlight {
-    color: #bbcf9b; /* Replace with your brand color */
-  }
+  line-height: 45px;
+    font-size: 20px;
+  text-align: center;
+  max-width: 1348px;
+  margin: 0 auto 120px auto;
+}  
+
+
   
 
 
@@ -359,7 +356,6 @@ nav {
   /* ---- COMMchella Container ------ */
   #commchella {
     padding-top: 50px; /* Match navbar height */
-    
     margin-top: -10px; /* Pull the section up */
   }
   
@@ -367,107 +363,145 @@ nav {
   width: 100%;
   padding: 0 20px;
     padding-bottom: 60px;
-
 }
 
-/* ----- COMMchella Video ----*/
 
+/* ----- COMMchella Video ----*/
 .commchella-video-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 27px;
+  margin-top: 0px;
+  margin-bottom: 80px;
 }
 
 .commchella-video-wrapper {
   width: 100%;
-  max-width: 640px;
-  padding: 0 16px;
+  max-width: 674px; /* Match the photo max-width */
+  aspect-ratio: 16 / 9; /* 👈 Match photo ratio */
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: match shadow */
 }
 
 .commchella-video-wrapper video {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* 👈 Crop to fit the box */
   display: block;
-  border-radius: 12px;
+  border-radius: 8px;
 }
+
 
 /* ----- COMMchella Name, title, text, ----*/
 /* ----- COMMchella Header ----*/
-.commchella-title {
-    font-size: 60px;
-    font-weight: 600;
-    color: black;
-     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    gap: 12px;
-}
-
 .commchella-header {
   text-align: center;
 }
 
-/* ----- COMMchella Text & Featured ----*/
-
-.commchella-text {
+.commchella-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: black;
   text-align: center;
-  font-weight: normal; /* Ensures the text is not bold */
-  margin-bottom: 10px;
-  line-height: 2; /* Adjust spacing between lines */
-}
-
-.featured-text {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-weight: normal;
-  max-width: 750px;
-  text-align: left;
-  font-size: 17px;
-  line-height: 1.2;
-  margin-left: 330px;
+  gap: 12px;
 
+  display: inline-block;    /* ✅ key fix */
+  position: relative;       /* optional, good for more complex ::after use */
+}
+
+
+#commchella .commchella-title::after {
+  content: "";
+  display: block;
+  height: 5.5px;
+  background-color: #73c62a;
+  width: 25%;
+  margin: 0px auto 80px auto;
+  border-radius: 2px;
+}
+
+.commchella-text {
+line-height: 45px;
+    font-size: 20px;
+  text-align: center;
+  max-width: 1348px;
+  margin: 0 auto 80px auto;
+}
+
+/* ---------- Featured Text ---------- */
+.featured-text {
+  margin: 100px auto 0 auto;
+  max-width: 750px;
+  text-align: center;
+  font-style: italic;
+  font-size: 25px;
+  line-height: 1.2;
 }
 
 .featured-label {
-  display: block;
-  margin-bottom: 6px;  /* Minimal spacing between text and logos */
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
   font-weight: normal;
-  font-size: 16px;
-  margin-top: 30px;
-  margin-bottom: 16px;
+  font-size: 20px;
+  position: relative;
+}
+
+.featured-label::after {
+  content: "";
+  display: block;
+  height: 2.5px;
+  background-color: #000000;
+  width: 40%;
+  margin: 15px auto 30px auto;
+  border-radius: 2px;
+}
+
+.featured-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 75px;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-bottom: 120px;
+
+  max-width: 1000px;  /* 🔼 Increase width */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;     /* ✅ Optional horizontal padding */
 }
 
 
-/* ------ COMMchella Feature Images ----------- */
+.featured-logos a {
+  display: inline-block;
+}
+
+.featured-logos img {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  max-height: 44.5px; /* optional control for consistent height */
+}
+
 .hover-img {
-  vertical-align: center;
   transition: all 0.3s ease-in-out;
-  margin-bottom: 16px;
+  margin-bottom: 0; /* override previous 16px if any */
 }
 
-/* Custom sizes */
-.hover-img.targum {
-  height: 30px;
-    margin-left: -3.5px;  /* Adjust this value as needed */
-
-}
-
-.hover-img.hercampus {
-  height: 27px;
-  margin-left: 0.8px;
-}
-
+/* Custom sizes reset to center properly */
+.hover-img.targum,
+.hover-img.hercampus,
 .hover-img.sci {
-  height: 32.5px;
-  margin-left: 1.3px;
+  margin-left: 0 !important;
 }
 
 .hover-img.targum:hover {
   content: url('images/LGDailyTargum.png');
-  height: 29.9px; /* Lock to same height */
 }
-
 
 .hover-img.hercampus:hover {
   content: url('images/LGHercampug.png');
@@ -479,9 +513,10 @@ nav {
 
 
 
+
 /* ----- COMMchella Icon ----*/
 .commchella-icon {
-  color: black;
+  color: #73c62a;
   font-size: 40px;
   text-decoration: none;
   display: inline-block;
@@ -495,26 +530,35 @@ nav {
 
 /* ------ COMMchella Stats ---------- */
 .commchella-stats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 120px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    text-align: center;
-      margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 120px;
+  margin: 0 auto 80px auto; /* 👈 auto left/right centers it */
+  text-align: center;
+  max-width: 1000px;         /* 👈 control total row width */
+  padding: 0 16px;           /* 👈 prevents hugging edges on small screens */
+}
 
-  }
   
   .stat {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    font-size: 50px;
-    font-weight: bold;
-    color: #bbcf9b;
+    font-size: 60px;
+    margin-bottom: 0px;
+    color: #73c62a;
+    flex: 0 0 auto; /* 👈 prevents items from stretching */
+  text-align: center;
   }
   
+.label {
+  color: black;
+  font-weight: normal; /* optional: ensures they're not bold */
+}
+
+
   /* Triggered on scroll */
   .stat.visible {
     opacity: 1;
@@ -545,10 +589,13 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  max-width: 850px;
-  margin: 20px auto;
+  max-width: 1000px;
+margin: 0 auto 0 auto;
+  margin-bottom: 80px;
   padding: 0 16px;
 }
+
+
 
 /* Work Item */
 .commchella-work {
@@ -599,13 +646,14 @@ nav {
 /* --------- HITW ------------ */
 /* --------- HITW Containers ------------ */
 #HITW {
-  padding-top: 75px;
-  margin-top: -10px;
+    padding-top: 50px; /* Match navbar height */
+    margin-top: -10px; /* Pull the section up */
 }
 
 .HITW-container {
   width: 100%;
   padding: 0 20px;
+  text-align: center;
 }
 
 /* --------- HITW Name, title, text ------------ */
@@ -614,60 +662,62 @@ nav {
   font-weight: 600;
   color: black;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 0px;
+  display: inline-block;            /* Use block to allow margin auto centering */
+  margin-left: auto;         /* Center horizontally */
+  margin-right: auto;
 }
 
-.HITW-text {
-  text-align: center;
-  font-weight: normal;
-    margin-top: -5px;       /* Pull upward to close the gap */
-  margin-bottom: 55px;
-  line-height: 2;
+
+.HITW-title::after {
+  content: "";
+  display: block;
+  height: 5.5px;
+  background-color: #73c62a;
+  width: 25%;
+  margin: 8px auto 80px auto;
+  border-radius: 2px;
 }
 
-.HITW-subheading {
-  text-align: center;
-  font-weight: bold;
-    font-size: 43px;  /* Match this to .HITW-BT */
 
-  margin-bottom: 0;
-  padding-bottom: 0;
-  line-height: 1.2;
+.HITW-headertext {
+line-height: 45px;
+    font-size: 20px;
+  text-align: center;
+  max-width: 1348px;
+  margin: 0 auto 80px auto;
+}
+
+.HITW-MVsubheading {
+  font-size: 60px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline-block;            /* Use block to allow margin auto centering */
+  margin-left: auto;         /* Center horizontally */
+  margin-right: auto;
+}
+
+.HITW-MVsubheading::after {
+  content: "";
+  display: block;
+  height: 5.5px;
+  background-color: #73c62a;
+  width: 25%;
+  margin: 8px auto 80px auto;
+  border-radius: 2px;
 }
 
 .HITW-MV-text {
+line-height: 45px;
+    font-size: 20px;
   text-align: center;
-  margin-top: 0px;  /* Adjust this value as needed */
-  margin-bottom: 20px;
-  line-height: 2;
-  font-weight: normal;
+  max-width: 1348px;
+  margin: 0 auto 80px auto;
 }
-
-.HITW-BT {
-  font-weight: bold;
-  font-size: 60px;
-  margin: 0;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-}
-
-
-.HITW-BT-Subheading {
-  text-align: center;
-  margin-top: 0px;        /* remove space above subheading */
-  margin-bottom: 10px;    /* keep space below if needed */
-  font-weight: normal;
-  line-height: 2;         /* keep generous line spacing inside subheading */
-}
-
-
-.HITW-BT-Subheading strong {
-  color: #000000; /* Replace with any color you want */
-  font-weight: 1000;
-}
-
 
 
 
@@ -697,13 +747,13 @@ nav {
   display: block;
 }
 
-/* ---------- Behind the General Photos -------- */
+/* ---------- General Photos -------- */
 #HITW .HITW-allphoto-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
   max-width: 1100px;
-  margin: 70px auto; /* centers it */
+  margin: 0px auto 100px auto; /* centers it */
   padding: 0 16px;
 }
 
@@ -731,7 +781,7 @@ nav {
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
   max-width: 1100px;
-  margin: 70px auto; /* centers it */
+  margin: 40px auto 80px auto; /* centers it */
   padding: 0 16px;
 }
 
@@ -895,29 +945,58 @@ nav {
 }
 
 /* -----------Breads & Threads-------------*/
-/* -----------Breads & Threads Icon-------------*/
-.BT-icon {
+/* -----------Breads & Threads Name-------------*/
+
+.HITW-BT-container {
+  position: relative;
+  text-align: center; /* Centers the H1 */
+  margin-bottom: 80px;
+}
+
+.HITW-BT {
+  font-size: 60px;
+  font-weight: 600;
   color: black;
-  font-size: 45px; /* closer in visual weight to h1 */
-  margin-top: 4px; /* adjust if icon looks slightly lower or higher */
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+}
+
+.HITW-BT::after {
+  content: "";
+  display: block;
+  height: 5.5px;
+  background-color: #73c62a;
+  width: 25%;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+.HITW-BT-Subheading {
+  line-height: 45px;
+  font-size: 20px;
+  text-align: center;
+  max-width: 1348px;
+  margin: 0 auto 80px auto;
+}
+
+.BT-icon {
+  position: absolute;
+  top: 50%;
+  right: 425px;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: #73c62a;
   text-decoration: none;
   display: inline-block;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .BT-icon:hover {
-  transform: translateY(-5px);
-  color: #C13584; /* Optional Instagram hover color */
+  transform: translateY(calc(-50% - 5px)); /* ✅ Moves icon up while keeping it centered */
+  color: #C13584;
 }
 
-.HITW-BT-container {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* centers everything horizontally */
-  gap: 10px; /* space between text and icon */
-  margin-bottom: 0px;
-  line-height: 1.2;
-}
 
 
 /* -----------Breads & Threads Posters-------------*/
@@ -993,6 +1072,35 @@ nav {
     padding-top: 50px; 
     margin-top: -10px;
 }
+
+#digital .container {
+  text-align: center;
+}
+
+
+#digital .sub-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline-block;            /* Use block to allow margin auto centering */
+  margin-left: auto;         /* Center horizontally */
+  margin-right: auto;
+}
+
+
+#digital .sub-title::after {
+  content: "";
+  display: block;
+  height: 5.5px;
+  background-color: #73c62a;
+  width: 25%;
+  margin: 8px auto 80px auto;
+  border-radius: 2px;
+}
+
 
 #digital .work-list {
     display: grid;

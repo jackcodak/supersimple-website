@@ -646,7 +646,7 @@ margin: 0 auto 0 auto;
 /* --------- HITW ------------ */
 /* --------- HITW Containers ------------ */
 #HITW {
-    padding-top: 50px; /* Match navbar height */
+    padding-top: 75px; /* Match navbar height */
     margin-top: -10px; /* Pull the section up */
 }
 

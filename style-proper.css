@@ -43,7 +43,7 @@ body{
     display: inline-block; /* Make it an inline-block element */
     margin-top: 15px; /* Space above the button */
     padding: 10px 20px; /* Padding for the button */
-    background-color: #bbcf9b; /* Background color */
+    background-color: #73c62a; /* Background color */
     color: black; /* Text color */
     text-decoration: none; /* Remove underline */
     border-radius: 5px; /* Rounded corners */
@@ -51,7 +51,7 @@ body{
 }
 
 .btn-download:hover {
-    background-color: #a3b68d; /* Darker background on hover */
+    background-color: #73c62a; /* Darker background on hover */
 }
 
 
@@ -66,169 +66,206 @@ body{
     margin-top: 20px;
 }
 .header-text h1 span{
-    color: #bbcf9b;
+    color: #73c62a;
 }
 
-/*----------Nav Bar-------------*/
+/*----------Nav Bar, menu-------------*/
 
 nav {
-    position: fixed; /* Make the navbar fixed */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    right: 0; /* Stretch to the right */
-    background-color: white; /* Ensure visibility against background */
-    z-index: 10; /* Keep it above other content */
-    padding: 10px 100px; /* Adjust padding for spacing */
-    display: flex; /* Use flexbox */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space out the logo and nav items */
-  }
+  position: relative;     /* not fixed */
+  /* remove the full-width stretch */
+  left: auto;
+  right: auto;
+  background: transparent;/* no white fill */
+  padding: 10px 0;        /* keep some top spacing for the logo */
+  display: flex;
+  align-items: center;
+  gap: 12px;              /* tiny gap between logo and button if you like */
+}
   
   .logo {
     width: 45%; /* Adjust as needed */
     margin: 0; /* Remove margin for better alignment */    
   }
-  
-  nav ul {
-    display: flex; /* Ensure the list items are in a row */
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-  }
-  
-  nav ul li {
-    list-style: none;
-    margin: 0 20px; /* Adjust spacing between items */
-  }
-  
-  nav ul li a {
-    color: black;
+
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 10000;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #73c62a;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+.menu-btn .bar {
+  position: absolute;
+  left: 50%;
+  width: 22px;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+
+/* stack the three bars into a hamburger */
+.menu-btn .bar:nth-child(1) { top: 14px; }
+.menu-btn .bar:nth-child(2) { top: 22px; }
+.menu-btn .bar:nth-child(3) { top: 30px; }
+
+
+/* --------------- "X" STATE --------------- */
+.menu-btn.open .bar:nth-child(1) {
+  top: 22px;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.menu-btn.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.open .bar:nth-child(3) {
+  top: 22px;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+
+
+
+/* --- SLIDING PANEL --- */
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  max-width: 1000px;
+  height: 100vh;
+  background: #73c62a;
+  color: #fff;
+  padding: 120px 40px 40px 8.33vw;
+  clip-path: circle(0% at 93% 50px);  /* start tiny circle near top-right */
+  transition: clip-path 1.2s ease;
+  pointer-events: none;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav.open {
+  clip-path: circle(150% at 95% 50px);  /* big enough circle to fully cover side-nav */
+  pointer-events: auto;
+}
+
+
+/* 1. keep side-nav under the button, just in case */
+.side-nav { z-index: 500; }
+
+/* 2. make the entire green panel ignore clicks … */
+.side-nav { pointer-events: none; }
+
+/* 3. …but re-enable clicks for everything INSIDE it
+      (the links, the heading, etc.) */
+.side-nav * { pointer-events: auto; }
+
+/* 4. give the panel a little top padding so its content
+      doesn’t sit under the button/X visually */
+
+/* --- SLIDING PANEL HEADER TEXT --- */
+.side-title {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  margin: 0 0 40px;
+  letter-spacing: -0.5px;
+  font-weight: 300; /* thin */
+  font-family: 'Poppins', sans-serif; /* same font */
+}
+
+
+.side-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.side-links li + li { margin-top: 24px; }
+
+/* --- SLIDING PANEL SUBHEADER TEXT --- */
+.side-links a {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600; /* thicker */
+  position: relative; /* for the hover bar */
+  transition: color 0.2s ease;
+}
+
+.side-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 4px;
+  width: 0%;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.side-links a:hover::after {
+  width: 100%;
+}
+
+.side-links a:hover { opacity: 1; }
+
+/*--------SIDE SOCIAL ICONS------*/
+.side-social-icons {
+  margin-top: 80px;
+  display: flex;
+  gap: 10px;
+  padding-left: 10px;    /* ensure no left padding */
+  margin-left: 0;     /* ensure no left margin */
+}
+.side-social-icons a{
     text-decoration: none;
-    font-size: 18px;
-    position: relative;
-  }
-  
-  nav ul li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #bbcf9b;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
-  }
-  
-  nav ul li a:hover::after {
-    width: 100%;
-  }
-  
-  .nav-menu {
-    display: flex; /* Display items in a row */
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    font-size: 40px;
+    margin-right: 25px;
+    color: #fff;
+    display: inline-block;
+    transition: transform 0.5s;
+    
+}
+.side-social-icons {
+    display: flex;
+    gap: 10px; /* Space between icons */
 }
 
-.nav-links {
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+.side-social-icons a:hover{
+    color: #fff;
+    transform: translateY(-5px);
 }
 
-.nav-links li {
-    position: relative; /* Required for positioning the dropdown */
+/*----------OVERLAY SLIDER-------------*/
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);  /* ← semi-transparent white */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 450;                         /* below side-nav, above everything else */
 }
 
-.dropdown-toggle {
-    cursor: pointer; /* Change cursor to pointer for dropdown toggle */
-}
-
-/* Dropdown styles */
-.dropdown {
-    display: none; /* Hide by default */
-    position: absolute;
-    top: 100%; /* Position below the parent li */
-    left: 0; /* Align to the left */
-    background: white; /* Background color */
-    border: 1px solid #ccc; /* Add a border */
-    border-radius: 4px; /* Rounded corners */
-    z-index: 10; /* Ensure it appears above other content */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-}
-
-/* Show dropdown on toggle */
-.dropdown-toggle.active + .dropdown {
-    display: block; /* Show dropdown when active */
-}
-
-.dropdown-menu {
-    margin: 0;
-    padding: 0;
-}
-
-
-.dropdown-menu li {
-    padding: 5px 10px;
-    margin: 0;
-}
-
-.dropdown-menu li:last-child {
-    padding-bottom: 0; /* Ensure no extra padding at the bottom */
-}
-
-/* Make sure dropdown items have no additional spacing */
-.dropdown li {
-    white-space: nowrap; /* Prevent text wrapping */
-}
-
-/* Link styles in dropdown */
-.dropdown li a {
-    display: block; /* Make links full width */
-    padding: 5px 10px; /* Adjust padding for links to minimize gap */
-    color: black; /* Text color */
-    text-decoration: none; /* Remove underline */
-    margin: 0; /* Remove margin */
-}
-
-.dropdown li a:hover {
-    background-color: #f0f0f0; /* Change background on hover */
-}
-
-/* Show dropdown on hover */
-.nav-links li:hover .dropdown {
-    display: block; /* Show dropdown */
-}
-
-.menu-toggle {
-    display: none; /* Show toggle on small screens */
-    cursor: pointer; /* Ensure cursor changes to pointer */
-}
-
-.menu-toggle.active .bar:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px); /* Adjust the first bar */
-}
-
-.menu-toggle.active .bar:nth-child(2) {
-    opacity: 0; /* Hide the middle bar */
-    transition: opacity 0.3s ease; /* Smooth opacity transition */
-}
-
-.menu-toggle.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px); /* Adjust the third bar */
-}
-
-/* Ensuring the transform origins are centered */
-.bar:nth-child(1), .bar:nth-child(3) {
-    transform-origin: center; /* Ensures rotation happens from the center */
-}
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto; /* Space between bars */
-    background-color: black; /* Color of the bars */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
+.overlay.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /*----------Header-------------*/
@@ -1062,9 +1099,66 @@ line-height: 45px;
   cursor: zoom-in;
 }
 
+/* -----------FEATURED IN HITW-------------*/
+.hover-img.hitw-targum:hover {
+  content: url('images/LGDailyTargum.png'); /* if same hover image, reuse */
+}
 
+.hover-img.njfamily:hover {
+  content: url('images/LGNJFamily.png'); /* create/upload this image */
+}
 
+.hitw-featured .featured-logos {
+  display: flex;
+  justify-content: center;  /* center logos */
+  gap: 120px;                /* space between logos */
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 120px;
+    margin-right: -90px; /* nudge left */
+}
 
+.hitw-featured .featured-logos img {
+  max-height: 80px;     /* up from 60px */
+  max-width: 300px;     /* up from 200px */
+  width: 100%;          /* scale within flex container */
+  height: auto;
+  object-fit: contain;  /* maintain proportions */
+}
+
+.hitw-featured .featured-logos a {
+  display: flex;
+  justify-content: center;
+}
+
+/* General HITW logo styling */
+.hitw-logo {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Adjust sizes individually for balance */
+.hitw-targum {
+  max-height: 120px;
+  max-width: 400px;
+}
+
+.hitw-njfamily {
+  max-height: 60px;
+  max-width: 200px;
+}
+
+.hover-img.hitw-njfamily:hover {
+  content: url('images/LGNJFamily.png'); /* make sure this path is correct */
+}
+
+.hitw-featured {
+  max-width: 750px;      /* same as .featured-text */
+  margin: 100px auto 0 auto;  /* centers and adds spacing */
+  text-align: center;
+}
 
 /* -----------Digital-------------*/
 /* Style for the digital section work list */

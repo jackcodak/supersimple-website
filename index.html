@@ -16,31 +16,41 @@
     <nav>
       <a href="#top" class="logo-link">
         <div class="logo-wrapper">
-          <img src="images\JACK_GREENBERG.png" class="logo" alt="Logo">
+          <img src="images/TOPLEFTJACKGREENBERG.png" class="logo" alt="Logo">
         </div>
       </a>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#HITW">Bagels</a></li>
-        <li><a href="#commchella">#BeCOMM</a></li>
-        <li><a href="#digital">WAJ</a></li>
-      </ul>
-      
-      <div class="dropdown">
-        <button class="dropbtn" id="dropdown-button">Menu</button>
-        <ul class="dropdown-content">
-         <li><a href="#about">About</a></li>
-        <li><a href="#HITW">Bagels</a></li>
-        <li><a href="#commchella">#BeCOMM</a></li>
-        <li><a href="#digital">WAJ</a></li>
-        </ul>
-      </div>
-    </nav>
+
+  <button id="menu-btn" aria-label="Open navigation" class="menu-btn">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</nav>
+
+<!-- NEW: sliding panel -->
+<aside id="side-nav" class="side-nav" aria-hidden="true">
+  <h1 class="side-title">My Work</h1>
+  <ul class="side-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#HITW">Hole In The Wall</a></li>
+    <li><a href="#commchella">#BeCOMM</a></li>
+    <li><a href="#digital">We Are Jersey</a></li>
+  </ul>
+   <div class="side-social-icons">
+    <a href="https://www.youtube.com/@JackandKaliyahProductions" target="_blank" aria-label="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.instagram.com/studiogreenberg/" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/jackmgreenberg/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</aside>
+
+<div id="overlay" class="overlay" aria-hidden="true"></div>
+
 
     <div id="headertextimage">    
       <div class="header-text">
@@ -58,7 +68,7 @@
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
-      <a href="images\Resume_Jack_Greenberg.pdf" target="_blank" class="btn-download" download>Download CV</a>
+      <a href="images\Resume_Jack_Greenberg.jpg" target="_blank" class="btn-download" download>Download CV</a>
     </div>
   </div>
 </div>
@@ -66,7 +76,45 @@
 
 
 
+<script>
+ const btn = document.getElementById('menu-btn');
+const panel = document.getElementById('side-nav');
+const overlay = document.getElementById('overlay');
 
+btn.addEventListener('click', () => {
+  btn.classList.toggle('open');
+  panel.classList.toggle('open');
+  overlay.classList.toggle('open');
+
+  // update accessibility attributes
+  const expanded = btn.classList.contains('open');
+  btn.setAttribute('aria-expanded', expanded);
+  panel.setAttribute('aria-hidden', !expanded);
+  overlay.setAttribute('aria-hidden', !expanded);
+});
+
+// Close panel when a side nav link is clicked
+document.querySelectorAll('.side-links a').forEach(link =>
+  link.addEventListener('click', () => {
+    btn.classList.remove('open');
+    panel.classList.remove('open');
+    overlay.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+    panel.setAttribute('aria-hidden', true);
+    overlay.setAttribute('aria-hidden', true);
+  })
+);
+
+// Close panel when overlay is clicked
+overlay.addEventListener('click', () => {
+  btn.classList.remove('open');
+  panel.classList.remove('open');
+  overlay.classList.remove('open');
+  btn.setAttribute('aria-expanded', false);
+  panel.setAttribute('aria-hidden', true);
+  overlay.setAttribute('aria-hidden', true);
+});
+</script>
 
 <!-- ----------About------------ -->
 <div id="about">
@@ -301,6 +349,23 @@
     </div>
   </a>
 
+</div>
+
+<!-- ----------FEATURED SECTION: Hole In The Wall ------------ -->
+<div class="hitw-featured">
+  <div class="featured-text">
+    <span class="featured-label">FEATURED IN</span>
+
+    <div class="featured-logos">
+     <a href="https://www.njfamily.com/events/breads-threads-music-launch-event/" target="_blank">
+        <img class="hover-img hitw-logo hitw-njfamily" src="images/family-black.png" alt="NJ Family">
+      </a>
+      <a href="https://dailytargum.com/article/your-hitw-article-link" target="_blank">
+        <img class="hover-img hitw-logo hitw-targum" src="images/Daily-Targum.png" alt="The Daily Targum">
+      </a>
+      
+    </div>
+  </div>
 </div>
 
 
@@ -552,7 +617,7 @@ document.querySelector('.lightbox-close').addEventListener('click', (e) => {
   <!-- ----------Digital------------ -->
   <div id="digital">
     <div class="container">
-      <h1 class="sub-title">Digital</h1>
+      <h1 class="sub-title">We Are Jersey</h1>
       <div class="work-list">
 
         <!-- Glowax -->
@@ -699,3 +764,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 </script>
+ 
+
